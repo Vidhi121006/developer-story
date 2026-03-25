@@ -1,0 +1,16 @@
+.floating-code {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.fc-item {
+  position: absolute;
+  font-family: var(--mono);
+  color: var(--green);
+  white-space: nowrap;
+  user-select: none;
+  letter-spacing: 0.03em;
+}

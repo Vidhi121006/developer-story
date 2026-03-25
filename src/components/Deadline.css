@@ -1,0 +1,268 @@
+.deadline {
+  min-height: 100vh;
+  padding: 8rem 6vw;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--black), #090a14, var(--black));
+}
+
+.deadline-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.deadline-chapter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.deadline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.deadline-img-col {
+  position: relative;
+}
+.deadline-img-wrap {
+  position: relative;
+  width: fit-content;
+}
+.deadline-img {
+  width: min(320px, 38vw);
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+}
+
+.deadline-clock {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(9,10,20,0.92);
+  border: 1px solid rgba(59,130,246,0.3);
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(59,130,246,0.1);
+  min-width: 160px;
+}
+.dc-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: rgba(59,130,246,0.6);
+  margin-bottom: 0.25rem;
+}
+.dc-time {
+  display: block;
+  font-family: var(--display);
+  font-size: 2.2rem;
+  color: var(--blue);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(59,130,246,0.5);
+}
+.dc-status {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  color: var(--amber);
+  letter-spacing: 0.1em;
+  margin-top: 0.25rem;
+  animation: blink 1s infinite;
+}
+
+.deadline-coffee {
+  position: absolute;
+  bottom: 1rem;
+  right: -1rem;
+  background: rgba(9,10,20,0.9);
+  border: 1px solid rgba(249,115,22,0.25);
+  padding: 0.4rem 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--amber);
+}
+.deadline-coffee span {
+  font-size: 0.65rem;
+  vertical-align: middle;
+}
+
+.deadline-heading {
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.dh-word { display: inline-block; }
+.deadline-accent { color: var(--blue); }
+
+.deadline-sub {
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 300;
+  line-height: 1.7;
+  border-left: 2px solid var(--blue);
+  padding-left: 1.25rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+.deadline-sub em { color: var(--blue); font-style: normal; }
+
+.deadline-two-modes {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+.mode-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  transition: border-color 0.2s;
+}
+.mode-card:hover { border-color: rgba(255,255,255,0.15); }
+.mode-day { border-top: 2px solid rgba(255,200,50,0.4); }
+.mode-night { border-top: 2px solid rgba(59,130,246,0.5); }
+.mode-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+.mode-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.mode-card li {
+  font-size: 0.82rem;
+  color: var(--text);
+  font-family: var(--mono);
+}
+.mode-strike { text-decoration: line-through; color: var(--muted); }
+.mode-em { color: var(--amber); }
+.mode-vs {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Terminal */
+.deadline-terminal {
+  background: #09090f;
+  border: 1px solid rgba(59,130,246,0.18);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(59,130,246,0.05);
+}
+.dt-header {
+  background: rgba(59,130,246,0.05);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-bottom: 1px solid rgba(59,130,246,0.1);
+}
+.dt-dots { display: flex; gap: 0.35rem; }
+.dt-dots span { width: 9px; height: 9px; border-radius: 50%; display: block; }
+.dt-title {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: rgba(59,130,246,0.4);
+  margin-left: auto;
+}
+.dt-body {
+  padding: 1rem 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.dt-prompt { display: flex; gap: 0.5rem; color: var(--muted); }
+.dt-path { color: var(--green); }
+.dt-sym { color: var(--amber); }
+.dt-line { line-height: 1.8; }
+.dt-str { color: var(--green); }
+.dt-ok { color: var(--green); }
+.dt-comment { color: var(--muted); }
+
+.dt-actions {
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid rgba(59,130,246,0.08);
+  display: flex;
+  gap: 0.75rem;
+}
+.dt-btn {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid;
+  background: transparent;
+  cursor: none;
+  transition: all 0.2s;
+  letter-spacing: 0.05em;
+}
+.dt-btn--commit {
+  color: var(--amber);
+  border-color: rgba(249,115,22,0.3);
+}
+.dt-btn--commit:hover {
+  background: var(--amber-dim);
+  border-color: var(--amber);
+}
+.dt-btn--push {
+  color: var(--green);
+  border-color: rgba(34,197,94,0.3);
+}
+.dt-btn--push:hover {
+  background: var(--green-dim);
+  border-color: var(--green);
+}
+.dt-btn.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.deadline-body {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.85;
+  margin-bottom: 0.75rem;
+  font-weight: 300;
+}
+.deadline-em { color: var(--white); font-style: italic; }
+.deadline-irony { color: var(--muted) !important; font-style: italic; }
+.deadline-small { font-size: 0.75rem; color: var(--red); }
+
+@media (max-width: 900px) {
+  .deadline-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .deadline-img { width: min(260px, 65vw); }
+  .deadline-two-modes {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .mode-vs { display: none; }
+}
