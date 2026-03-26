@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import chapter4 from '../assets/images/chapter4.mp4';
 import './Growth.css';
+import useChapterNarration from "../hooks/useChapterNarration";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +22,7 @@ export default function Growth() {
   const imgRef = useRef(null);
   const timelineRef = useRef(null);
   const [activeStep, setActiveStep] = useState(-1);
+  useChapterNarration(sectionRef, "growth");
 
   useEffect(() => {
     const ctx = gsap.context(() => {

@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import chapter3 from '../assets/images/chapter3.mp4';
 import './Deadline.css';
+import useChapterNarration from "../hooks/useChapterNarration";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,6 +23,7 @@ export default function Deadline() {
   ];
   const [commitIdx, setCommitIdx] = useState(0);
   const [pushed, setPushed] = useState(false);
+  useChapterNarration(sectionRef, "deadline");
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -108,7 +110,7 @@ export default function Deadline() {
           <div className="deadline-img-col">
             <div className="deadline-img-wrap" ref={imgRef}>
               <video
-                  className="origin-img"
+                  className="deadline-img"
                   src={chapter3}
                   autoPlay
                   muted

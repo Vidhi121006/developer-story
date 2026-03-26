@@ -26,6 +26,8 @@ export default function Cursor() {
     <>
       <div className="cursor" ref={dotRef} />
       <div className="cursor-trail" ref={trailRef} />
+      
     </>
+    
   );
 }

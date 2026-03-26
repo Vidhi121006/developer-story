@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import vidhiImg from '../assets/images/vidhi.jpeg';
 import './Hero.css';
+import useChapterNarration from "../hooks/useChapterNarration";
 
 export default function Hero() {
   const sectionRef = useRef(null);
@@ -10,7 +11,7 @@ export default function Hero() {
   const subtitleRef = useRef(null);
   const tagsRef = useRef(null);
   const scrollIndicatorRef = useRef(null);
-
+  useChapterNarration(sectionRef, "prologue");
   const matrixRef = useRef(null);
   const matrixInterval = useRef(null);
 

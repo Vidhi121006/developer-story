@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import final from '../assets/images/final.mp4';
 import './Final.css';
+import useChapterNarration from "../hooks/useChapterNarration";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,6 +27,7 @@ export default function Final() {
   const sectionRef = useRef(null);
   const imgRef = useRef(null);
   const titleRef = useRef(null);
+  useChapterNarration(sectionRef, "final");
 
   useEffect(() => {
     const ctx = gsap.context(() => {

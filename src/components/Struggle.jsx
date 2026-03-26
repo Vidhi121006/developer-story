@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import chapter2 from '../assets/images/chapter2.mp4';
 import './Struggle.css';
+import useChapterNarration from "../hooks/useChapterNarration";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,6 +26,7 @@ export default function Struggle() {
   const errorRef = useRef(null);
   const cardsRef = useRef(null);
   const [expandedCard, setExpandedCard] = useState(null);
+  useChapterNarration(sectionRef, "struggle");
 
   useEffect(() => {
     const ctx = gsap.context(() => {

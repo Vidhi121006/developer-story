@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import './Nav.css';
+import { useAudio } from "../context/AudioContext";
 
 const sections = ['Hero', 'Origin', 'Struggle', 'Deadline', 'Growth', 'Final'];
 
 export default function Nav() {
+  const { language, switchLanguage } = useAudio();
   const navRef = useRef(null);
   const [active, setActive] = useState(0);
 
@@ -33,7 +35,9 @@ export default function Nav() {
   }, []);
 
   return (
+    
     <nav className="nav" ref={navRef}>
+    
       <div className="nav-logo">
         <span className="nav-logo-bracket">&lt;</span>
         <span>VK</span>
